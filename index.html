@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOFT LUXE PINK — Boutique & Smart Lifestyle</title>
+  <!-- Google Fonts: Nunito & Prompt for refined Thai & English typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'Nunito', 'sans-serif'],
+            display: ['Nunito', 'Prompt', 'sans-serif'],
+          },
+          colors: {
+            warmWhite: '#FDFBF7',
+            cream: '#F6EFEA',
+            rosePink: '#E58C9E',
+            dustyPink: '#C96A7E',
+            pastelPink: '#FADBE2',
+            warmMocha: '#6E564B',
+            beige: '#E8DDD5',
+            peach: '#F6C6B4',
+            champagne: '#F2DEC9',
+            darkBrown: '#3A2A24',
+            warmGray: '#8A7B75',
+          },
+          boxShadow: {
+            'luxe': '0 12px 32px rgba(180, 120, 130, 0.08)',
+            'luxe-lg': '0 20px 44px rgba(165, 105, 118, 0.14)',
+            'pink-glow': '0 10px 24px rgba(217, 107, 130, 0.28)',
+            'mocha-glow': '0 10px 24px rgba(110, 86, 75, 0.16)',
+          },
+          borderRadius: {
+            '2xl': '20px',
+            '3xl': '24px',
+            '4xl': '28px',
+            'sheet': '32px',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-warm: #FDFBF7;
+      --bg-cream: #F6EFEA;
+      --pink-primary: #E58C9E;
+      --pink-dusty: #C96A7E;
+      --mocha: #6E564B;
+      --text-dark: #3A2A24;
+      --text-gray: #8A7B75;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-warm);
+      color: var(--text-dark);
+      font-family: 'Prompt', 'Nunito', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Soft Gradient Utilities */
+    .bg-pink-gradient {
+      background: linear-gradient(135deg, #F5A3B5 0%, #D96B82 100%);
+    }
+
+    .bg-pink-soft-gradient {
+      background: linear-gradient(145deg, #FFF5F7 0%, #FCE7EC 50%, #F8DCE3 100%);
+    }
+
+    .bg-mocha-gradient {
+      background: linear-gradient(135deg, #7D6256 0%, #574239 100%);
+    }
+
+    .bg-champagne-gradient {
+      background: linear-gradient(135deg, #FDF8F3 0%, #F3E5D8 100%);
+    }
+
+    .bg-detail-sheet {
+      background: linear-gradient(180deg, #FDECEF 0%, #FFF9FA 28%, #FFFFFF 100%);
+    }
+
+    /* Subtle Luxe Card Surface */
+    .luxe-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(110, 86, 75, 0.08);
+      box-shadow: 0 12px 32px rgba(180, 120, 130, 0.08);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .luxe-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(180, 120, 130, 0.14);
+    }
+
+    /* Glassmorphic Floating Pill */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(229, 140, 158, 0.22);
+      box-shadow: 0 16px 40px rgba(110, 86, 75, 0.12);
+    }
+
+    /* Floating Background Orbs */
+    @keyframes floatSlow {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(18px, -22px) scale(1.04); }
+      66% { transform: translate(-14px, 14px) scale(0.97); }
+    }
+
+    @keyframes floatReverse {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-24px, -18px) scale(1.05); }
+    }
+
+    .orb-1 {
+      animation: floatSlow 14s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      animation: floatReverse 18s ease-in-out infinite;
+    }
+
+    .orb-3 {
+      animation: floatSlow 20s ease-in-out infinite reverse;
+    }
+
+    /* Smooth View Transition */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .view-animate {
+      animation: fadeSlideUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Heart Pop Micro-interaction */
+    @keyframes heartPop {
+      0% { transform: scale(1); }
+      45% { transform: scale(1.32); }
+      75% { transform: scale(0.92); }
+      100% { transform: scale(1); }
+    }
+
+    .heart-pop {
+      animation: heartPop 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F6EFEA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E2C5CB;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D96B82;
+    }
+
+    /* Hide scrollbar for category pills */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Circular SVG Progress Animation */
+    .progress-ring-circle {
+      transition: stroke-dashoffset 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-pastelPink selection:text-darkBrown pb-28 md:pb-16">
+
+  <!-- Decorative Soft Gradient Background Orbs (Non-obstructive) -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+    <div class="orb-1 absolute -top-24 -left-24 w-80 h-80 md:w-[440px] md:h-[440px] rounded-full opacity-45 blur-3xl"
+         style="background: radial-gradient(circle, #FADBE2 0%, rgba(250,219,226,0) 72%);"></div>
+    <div class="orb-2 absolute top-1/3 -right-28 w-96 h-96 md:w-[500px] md:h-[500px] rounded-full opacity-40 blur-3xl"
+         style="background: radial-gradient(circle, #F6C6B4 0%, rgba(246,198,180,0) 70%);"></div>
+    <div class="orb-3 absolute bottom-0 left-1/4 w-80 h-80 md:w-[460px] md:h-[460px] rounded-full opacity-35 blur-3xl"
+         style="background: radial-gradient(circle, #F2DEC9 0%, rgba(242,222,201,0) 72%);"></div>
+  </div>
+
+  <!-- Main App Wrapper -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
+
+    <!-- Top Persistent Glass Header -->
+    <header class="flex items-center justify-between gap-3 mb-6 sm:mb-8">
+      <!-- Brand Identity -->
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('dashboard')">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-pink-gradient flex items-center justify-center text-white shadow-pink-glow transition-transform duration-300 group-hover:scale-105">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
+            <path d="M12 3C9.5 6.5 6 8.5 6 13a6 6 0 0 0 12 0c0-4.5-3.5-6.5-6-10Z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 19v2M9 21h6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-extrabold tracking-tight text-lg sm:text-xl text-darkBrown">SOFT LUXE</span>
+            <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full bg-pastelPink/80 text-dustyPink">PINK</span>
+          </div>
+          <p class="text-[11px] sm:text-xs text-warmGray">Smart Lifestyle & Boutique</p>
+        </div>
+      </div>
+
+      <!-- Desktop Center Navigation Pill -->
+      <nav class="hidden md:flex items-center gap-1.5 p-1.5 rounded-full glass-nav">
+        <button onclick="switchView('dashboard')" id="nav-desk-dashboard"
+                class="nav-btn-desk px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 bg-pink-gradient text-white shadow-pink-glow">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Dashboard</span>
+        </button>
+        <button onclick="switchView('shop')" id="nav-desk-shop"
+                class="nav-btn-desk px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 text-warmGray hover:text-darkBrown">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Boutique Shop</span>
+        </button>
+        <button onclick="switchView('favorites')" id="nav-desk-favorites"
+                class="nav-btn-desk px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 text-warmGray hover:text-darkBrown">
+          <i data-lucide="heart" class="w-4 h-4"></i>
+          <span>Wishlist</span>
+          <span id="desk-fav-badge" class="hidden px-1.5 py-0.2 text-[10px] font-bold rounded-full bg-pastelPink text-dustyPink">0</span>
+        </button>
+      </nav>
+
+      <!-- Right Action Controls: Notifications, Cart, User Profile -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Notification Button -->
+        <div class="relative">
+          <button onclick="toggleNotifications()" aria-label="Notifications"
+                  class="w-11 h-11 rounded-2xl bg-white border border-warmMocha/10 shadow-luxe flex items-center justify-center text-darkBrown hover:text-dustyPink active:scale-95 transition-all">
+            <i data-lucide="bell" class="w-5 h-5"></i>
+            <span id="notif-dot" class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-dustyPink ring-2 ring-white"></span>
+          </button>
+
+          <!-- Notification Dropdown -->
+          <div id="notif-dropdown" class="hidden absolute right-0 mt-3 w-80 sm:w-96 rounded-3xl bg-white border border-warmMocha/10 shadow-luxe-lg p-4 z-50 view-animate">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-cream">
+              <div class="flex items-center gap-2">
+                <span class="font-semibold text-sm text-darkBrown">การแจ้งเตือน (Notifications)</span>
+                <span class="px-2 py-0.5 text-[11px] font-semibold rounded-full bg-pastelPink text-dustyPink">3 ใหม่</span>
+              </div>
+              <button onclick="markAllRead()" class="text-xs text-dustyPink hover:underline font-medium">อ่านทั้งหมด</button>
+            </div>
+            <div class="space-y-2.5 max-h-72 overflow-y-auto pr-1" id="notif-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Button -->
+        <button onclick="openCartDrawer()" aria-label="Shopping Cart"
+                class="relative w-11 h-11 rounded-2xl bg-white border border-warmMocha/10 shadow-luxe flex items-center justify-center text-darkBrown hover:text-dustyPink active:scale-95 transition-all">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="header-cart-count"
+                class="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] px-1 rounded-full bg-pink-gradient text-white text-[11px] font-bold flex items-center justify-center shadow-pink-glow">
+            2
+          </span>
+        </button>
+
+        <!-- User Profile Pill -->
+        <div onclick="openProfileModal()" class="flex items-center gap-2.5 pl-1.5 pr-3 py-1.5 rounded-full bg-white border border-warmMocha/10 shadow-luxe cursor-pointer hover:border-rosePink/40 transition-all">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+               onerror="this.src='https://placehold.co/100x100/FADBE2/C96A7E?text=CS'"
+               alt="Chertam S."
+               class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover ring-2 ring-pastelPink" />
+          <div class="hidden sm:block text-left">
+            <p class="text-xs font-semibold text-darkBrown leading-tight">Chertam S.</p>
+            <p class="text-[10px] font-medium text-dustyPink flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-dustyPink inline-block"></span>
+              VIP Rose Tier
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 1: LUXURY DASHBOARD (Smart Home & Fintech Hybrid)              -->
+    <!-- =================================================================== -->
+    <main id="view-dashboard" class="view-animate space-y-6 sm:space-y-8">
+
+      <!-- Welcome Banner & Smart Environment Status -->
+      <section class="rounded-4xl bg-champagne-gradient border border-warmMocha/10 p-5 sm:p-7 shadow-luxe relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-52 h-52 rounded-full bg-pastelPink/40 blur-2xl pointer-events-none"></div>
+
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 relative z-10">
+          <div class="space-y-1.5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-warmMocha/10 text-xs font-medium text-warmMocha">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Boutique Ambience: Rose Silk • 23°C</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-darkBrown tracking-tight pt-1">
+              สวัสดีตอนค่ำ, <span class="text-dustyPink">Chertam</span> ✨
+            </h1>
+            <p class="text-xs sm:text-sm text-warmGray max-w-xl">
+              ยินดีต้อนรับสู่พื้นที่ไลฟ์สไตล์ระดับพรีเมียม ตรวจสอบยอดเงินสมาชิก คะแนนสะสม และคอลเลกชันความงามพิเศษสำหรับคุณ
+            </p>
+          </div>
+
+          <!-- Smart Home / Mood Quick Toggle -->
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <button onclick="toggleSmartAmbience(this)" data-mode="Rose Silk"
+                    class="px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white border border-warmMocha/10 shadow-sm flex items-center gap-2.5 text-xs sm:text-sm font-medium text-darkBrown active:scale-95 transition-all">
+              <span class="w-8 h-8 rounded-xl bg-pastelPink/70 text-dustyPink flex items-center justify-center">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+              </span>
+              <div class="text-left">
+                <p class="text-[10px] text-warmGray leading-none">Aroma Diffuser</p>
+                <p class="font-semibold text-darkBrown mt-0.5" id="aroma-label">Rose Silk • เปิดอยู่</p>
+              </div>
+            </button>
+
+            <button onclick="switchView('shop')"
+                    class="px-5 py-3 rounded-full bg-pink-gradient text-white text-xs sm:text-sm font-semibold shadow-pink-glow hover:opacity-95 active:scale-95 transition-all flex items-center gap-2">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+              <span>ช้อปคอลเลกชันใหม่</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layered Summary Cards (Fintech Wallet + Rewards + Active Order) -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <!-- Card 1: Luxe Wallet (Warm Mocha & Champagne Layered Card) -->
+        <div class="relative rounded-4xl bg-mocha-gradient text-white p-6 shadow-mocha-glow overflow-hidden group">
+          <!-- Decorative layered inner card curve -->
+          <div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-white/10 transition-transform duration-500 group-hover:scale-110"></div>
+          <div class="absolute right-6 bottom-6 w-20 h-20 rounded-full bg-rosePink/20 blur-xl"></div>
+
+          <div class="flex items-center justify-between mb-6 relative z-10">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                <i data-lucide="wallet" class="w-5 h-5 text-champagne"></i>
+              </div>
+              <div>
+                <p class="text-xs text-champagne/80 font-medium">Luxe Wallet Balance</p>
+                <p class="text-[11px] text-white/60">กระเป๋าเงินสมาชิกพรีเมียม</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-white/15 text-[11px] font-semibold text-champagne">
+              +4.5% Cashback
+            </span>
+          </div>
+
+          <div class="relative z-10">
+            <p class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight" id="wallet-balance-display">
+              ฿24,850.00
+            </p>
+            <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/15">
+              <span class="text-xs text-champagne/80">Card •••• 8842</span>
+              <button onclick="openTopUpModal()"
+                      class="px-3.5 py-1.5 rounded-full bg-white text-darkBrown text-xs font-semibold hover:bg-champagne active:scale-95 transition-all">
+                + เติมเงิน
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pink Luxe Points Card -->
+        <div class="relative rounded-4xl bg-pink-soft-gradient border border-rosePink/20 p-6 shadow-luxe overflow-hidden group">
+          <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-rosePink/15 transition-transform duration-500 group-hover:scale-110"></div>
+
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-2xl bg-pink-gradient text-white flex items-center justify-center shadow-pink-glow">
+                <i data-lucide="gem" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-warmGray font-medium">Luxe Beauty Points</p>
+                <p class="text-[11px] text-dustyPink">คะแนนสะสมแลกของรางวัล</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-white text-[11px] font-bold text-dustyPink shadow-sm">
+              VIP Gold
+            </span>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="font-display text-3xl sm:text-4xl font-extrabold text-darkBrown" id="points-display">4,280</p>
+              <span class="text-xs font-semibold text-dustyPink">PTS</span>
+            </div>
+            <div class="flex items-center justify-between mt-5 pt-4 border-t border-rosePink/15">
+              <span class="text-xs text-warmGray">อีก 720 pts รับชุดของขวัญ</span>
+              <button onclick="openRedeemModal()"
+                      class="px-3.5 py-1.5 rounded-full bg-pink-gradient text-white text-xs font-semibold shadow-pink-glow active:scale-95 transition-all">
+                แลกสิทธิ์
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Active Delivery & Smart Order Tracker -->
+        <div class="luxe-card rounded-4xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-cream text-warmMocha flex items-center justify-center">
+                  <i data-lucide="package-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-warmGray font-medium">Active Boutique Order</p>
+                  <p class="text-xs font-bold text-darkBrown">#SLP-2026-891</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                กำลังจัดส่ง
+              </span>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-cream/70 border border-warmMocha/5 flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=160&q=80"
+                   onerror="this.src='https://placehold.co/120x120/FADBE2/C96A7E?text=Serum'"
+                   alt="Rose Silk Serum"
+                   class="w-12 h-12 rounded-xl object-cover" />
+              <div class="min-w-0 flex-1">
+                <p class="text-xs font-semibold text-darkBrown truncate">Velvet Rose Glow Serum</p>
+                <p class="text-[11px] text-warmGray">ถึงปลายทางวันนี้ 14:30 น.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-cream flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-xs text-warmMocha font-medium">
+              <i data-lucide="truck" class="w-4 h-4 text-dustyPink"></i>
+              <span>White-Glove Courier</span>
+            </div>
+            <button onclick="openTrackModal()" class="text-xs font-semibold text-dustyPink hover:underline">
+              ติดตามพัสดุ →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions Bar -->
+      <section class="luxe-card rounded-4xl p-5 sm:p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-sm sm:text-base font-bold text-darkBrown">เมนูด่วน (Quick Actions)</h2>
+          <span class="text-xs text-warmGray">แตะเพื่อทำรายการทันที</span>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-5 gap-3 sm:gap-4">
+          <button onclick="openTopUpModal()" class="group flex flex-col items-center gap-2 p-3 rounded-3xl hover:bg-cream/60 active:scale-95 transition-all">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-pink-soft-gradient text-dustyPink flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
+              <i data-lucide="plus-circle" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-medium text-darkBrown text-center">เติมเงิน</span>
+          </button>
+
+          <button onclick="showToast('เปิดกล้องสแกน QR สมาชิกเรียบร้อย ✨')" class="group flex flex-col items-center gap-2 p-3 rounded-3xl hover:bg-cream/60 active:scale-95 transition-all">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cream text-warmMocha flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
+              <i data-lucide="qr-code" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-medium text-darkBrown text-center">สแกน QR</span>
+          </button>
+
+          <button onclick="openTrackModal()" class="group flex flex-col items-center gap-2 p-3 rounded-3xl hover:bg-cream/60 active:scale-95 transition-all">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-champagne/60 text-warmMocha flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-medium text-darkBrown text-center">ติดตามพัสดุ</span>
+          </button>
+
+          <button onclick="openRedeemModal()" class="group flex flex-col items-center gap-2 p-3 rounded-3xl hover:bg-cream/60 active:scale-95 transition-all">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-peach/40 text-dustyPink flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
+              <i data-lucide="gift" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-medium text-darkBrown text-center">แลกของขวัญ</span>
+          </button>
+
+          <button onclick="switchView('shop')" class="hidden sm:flex group flex-col items-center gap-2 p-3 rounded-3xl hover:bg-cream/60 active:scale-95 transition-all">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-pink-gradient text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-pink-glow">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs font-medium text-darkBrown text-center">ร้านค้า</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Information Dashboard: Activity Graph + Circular Progress Widgets -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Interactive Activity Graph (7 cols on desktop) -->
+        <div class="lg:col-span-7 luxe-card rounded-4xl p-5 sm:p-7 flex flex-col justify-between">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+            <div>
+              <h2 class="text-base sm:text-lg font-bold text-darkBrown">สถิติการช้อป & รางวัลสมาชิก</h2>
+              <p class="text-xs text-warmGray">ภาพรวมการใช้จ่ายและคะแนนสะสมรายสัปดาห์</p>
+            </div>
+
+            <!-- Timeframe Pill Toggle -->
+            <div class="inline-flex p-1 rounded-full bg-cream border border-warmMocha/10">
+              <button onclick="updateChartPeriod('week')" id="btn-chart-week"
+                      class="px-3.5 py-1 rounded-full text-xs font-semibold bg-pink-gradient text-white shadow-sm transition-all">
+                สัปดาห์นี้
+              </button>
+              <button onclick="updateChartPeriod('month')" id="btn-chart-month"
+                      class="px-3.5 py-1 rounded-full text-xs font-semibold text-warmGray hover:text-darkBrown transition-all">
+                รายเดือน
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive SVG Area Chart Container -->
+          <div class="relative w-full h-56 sm:h-64 select-none" id="chart-container">
+            <svg id="activity-svg" class="w-full h-full overflow-visible" viewBox="0 0 600 220" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="roseAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E58C9E" stop-opacity="0.38" />
+                  <stop offset="100%" stop-color="#E58C9E" stop-opacity="0.0" />
+                </linearGradient>
+                <linearGradient id="roseLineGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#F5A3B5" />
+                  <stop offset="100%" stop-color="#C96A7E" />
+                </linearGradient>
+              </defs>
+
+              <!-- Subtle Horizontal Gridlines -->
+              <line x1="20" y1="35" x2="580" y2="35" stroke="#EFE6E0" stroke-dasharray="4 4" />
+              <line x1="20" y1="85" x2="580" y2="85" stroke="#EFE6E0" stroke-dasharray="4 4" />
+              <line x1="20" y1="135" x2="580" y2="135" stroke="#EFE6E0" stroke-dasharray="4 4" />
+              <line x1="20" y1="185" x2="580" y2="185" stroke="#EFE6E0" />
+
+              <!-- Smooth Area & Line Paths -->
+              <path id="chart-area-path" fill="url(#roseAreaGrad)" d="" />
+              <path id="chart-line-path" fill="none" stroke="url(#roseLineGrad)" stroke-width="4" stroke-linecap="round" d="" />
+
+              <!-- Interactive Data Points Group -->
+              <g id="chart-points-group"></g>
+            </svg>
+
+            <!-- Floating Interactive Tooltip -->
+            <div id="chart-tooltip"
+                 class="hidden pointer-events-none absolute -top-2 left-0 px-3 py-2 rounded-2xl bg-darkBrown text-white text-xs shadow-lg transition-all duration-150 z-20">
+              <p class="font-bold text-pastelPink" id="tooltip-label">วันพุธ</p>
+              <p class="font-display font-semibold" id="tooltip-value">฿3,450</p>
+            </div>
+          </div>
+
+          <!-- X-Axis Labels -->
+          <div id="chart-x-labels" class="flex items-center justify-between px-2 pt-2 text-[11px] font-medium text-warmGray">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Circular Progress & Wellness/VIP Indicators (5 cols on desktop) -->
+        <div class="lg:col-span-5 luxe-card rounded-4xl p-5 sm:p-7 flex flex-col justify-between space-y-5">
+          <div>
+            <h2 class="text-base sm:text-lg font-bold text-darkBrown">เป้าหมายความงาม & ระดับ VIP</h2>
+            <p class="text-xs text-warmGray">ความคืบหน้าสิทธิพิเศษและรูทีนดูแลผิวประจำเดือน</p>
+          </div>
+
+          <!-- Progress Circles Row -->
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Circle 1: VIP Tier Progress -->
+            <div class="rounded-3xl bg-cream/60 border border-warmMocha/10 p-4 flex flex-col items-center text-center">
+              <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+                <svg class="w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" stroke="#EADCD5" stroke-width="9" fill="none" />
+                  <circle id="ring-vip" class="progress-ring-circle" cx="50" cy="50" r="40"
+                          stroke="#D96B82" stroke-width="9" stroke-linecap="round" fill="none"
+                          stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span class="font-display text-lg sm:text-xl font-extrabold text-darkBrown">82%</span>
+                  <span class="text-[10px] font-medium text-dustyPink">Diamond</span>
+                </div>
+              </div>
+              <p class="text-xs font-bold text-darkBrown mt-2">ระดับสมาชิก VIP</p>
+              <p class="text-[11px] text-warmGray mt-0.5">อีก ฿2,400 อัปเกรด</p>
+            </div>
+
+            <!-- Circle 2: Skincare Routine Goal -->
+            <div class="rounded-3xl bg-pink-soft-gradient border border-rosePink/15 p-4 flex flex-col items-center text-center">
+              <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+                <svg class="w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" stroke="#F8D5DD" stroke-width="9" fill="none" />
+                  <circle id="ring-glow" class="progress-ring-circle" cx="50" cy="50" r="40"
+                          stroke="#6E564B" stroke-width="9" stroke-linecap="round" fill="none"
+                          stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span class="font-display text-lg sm:text-xl font-extrabold text-darkBrown">68%</span>
+                  <span class="text-[10px] font-medium text-warmMocha">Hydration</span>
+                </div>
+              </div>
+              <p class="text-xs font-bold text-darkBrown mt-2">Glow Routine</p>
+              <p class="text-[11px] text-warmGray mt-0.5">ครบ 21/30 วัน</p>
+            </div>
+          </div>
+
+          <!-- Status Indicator Bars -->
+          <div class="space-y-2.5 pt-1">
+            <div class="flex items-center justify-between p-3 rounded-2xl bg-warmWhite border border-warmMocha/10">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rosePink"></span>
+                <span class="text-xs font-medium text-darkBrown">คูปองส่วนลดพิเศษเดือนนี้</span>
+              </div>
+              <span class="text-xs font-bold text-dustyPink">พร้อมใช้งาน 3 ใบ</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-2xl bg-warmWhite border border-warmMocha/10">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-warmMocha"></span>
+                <span class="text-xs font-medium text-darkBrown">บริการห่อของขวัญซิกเนเจอร์</span>
+              </div>
+              <span class="text-xs font-bold text-warmMocha">ฟรีไม่จำกัด</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Curated Boutique Preview on Dashboard -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg sm:text-xl font-bold text-darkBrown">คัดสรรพิเศษเพื่อคุณ (Curated For You)</h2>
+            <p class="text-xs text-warmGray">ไอเทมยอดนิยมประจำสัปดาห์ในโทน Soft Luxe</p>
+          </div>
+          <button onclick="switchView('shop')" class="px-4 py-2 rounded-full bg-white border border-warmMocha/10 text-xs font-semibold text-dustyPink hover:bg-pastelPink/30 transition-all">
+            ดูสินค้าทั้งหมด →
+          </button>
+        </div>
+
+        <div id="dashboard-featured-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <!-- Populated dynamically with first 4 products -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 2: MODERN PINK E-COMMERCE STOREFRONT                           -->
+    <!-- =================================================================== -->
+    <main id="view-shop" class="hidden view-animate space-y-6">
+
+      <!-- Storefront Promo Banner -->
+      <section class="rounded-4xl bg-pink-soft-gradient border border-rosePink/20 p-6 sm:p-8 shadow-luxe relative overflow-hidden">
+        <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-rosePink/15 to-transparent pointer-events-none"></div>
+        <div class="max-w-xl space-y-2 relative z-10">
+          <span class="inline-block px-3 py-1 rounded-full bg-white text-dustyPink text-xs font-bold shadow-sm">
+            SOFT LUXE BOUTIQUE • 2026
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-bold text-darkBrown">
+            ความงามอันละมุนในแบบของคุณ
+          </h1>
+          <p class="text-xs sm:text-sm text-warmGray">
+            เลือกช้อปสกินแคร์ น้ำหอม และของแต่งบ้านโทนโรสโกลด์ พร้อมรับโค้ดส่วนลด <strong class="text-dustyPink">LUXE10</strong> ลดทันที 10%
+          </p>
+        </div>
+      </section>
+
+      <!-- Search Bar & Sort Controls -->
+      <section class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <!-- Search Input -->
+        <div class="relative flex-1">
+          <i data-lucide="search" class="w-5 h-5 text-warmGray absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          <input type="text" id="product-search-input" oninput="filterProducts()"
+                 placeholder="ค้นหาเซรั่ม น้ำหอม เทียนหอม หรือกระเป๋า..."
+                 class="w-full pl-12 pr-10 py-3.5 rounded-full bg-white border border-warmMocha/10 shadow-luxe text-sm text-darkBrown placeholder-warmGray/70 focus:outline-none focus:border-rosePink focus:ring-4 focus:ring-pastelPink/50 transition-all" />
+          <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-cream text-warmGray hover:text-darkBrown flex items-center justify-center">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Sort Dropdown -->
+        <div class="flex items-center gap-2">
+          <select id="product-sort-select" onchange="filterProducts()"
+                  class="w-full sm:w-auto px-4 py-3.5 rounded-full bg-white border border-warmMocha/10 shadow-luxe text-xs sm:text-sm font-medium text-darkBrown focus:outline-none focus:border-rosePink cursor-pointer">
+            <option value="featured">เรียงตาม: แนะนำ</option>
+            <option value="price-asc">ราคา: ต่ำไปสูง</option>
+            <option value="price-desc">ราคา: สูงไปต่ำ</option>
+            <option value="rating">คะแนนรีวิวสูงสุด</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Category Navigation Pills -->
+      <section class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-1" id="category-tabs">
+        <button onclick="selectCategory('All')" data-cat="All"
+                class="cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-pink-gradient text-white shadow-pink-glow">
+          ทั้งหมด (All)
+        </button>
+        <button onclick="selectCategory('Skincare')" data-cat="Skincare"
+                class="cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-white text-warmGray border border-warmMocha/10 hover:text-darkBrown">
+          สกินแคร์ (Skincare)
+        </button>
+        <button onclick="selectCategory('Fragrance')" data-cat="Fragrance"
+                class="cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-white text-warmGray border border-warmMocha/10 hover:text-darkBrown">
+          น้ำหอม (Fragrance)
+        </button>
+        <button onclick="selectCategory('Home Luxe')" data-cat="Home Luxe"
+                class="cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-white text-warmGray border border-warmMocha/10 hover:text-darkBrown">
+          ของแต่งบ้าน (Home Luxe)
+        </button>
+        <button onclick="selectCategory('Accessories')" data-cat="Accessories"
+                class="cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-white text-warmGray border border-warmMocha/10 hover:text-darkBrown">
+          แอคเซสซอรี (Accessories)
+        </button>
+      </section>
+
+      <!-- Responsive Product Grid (2 cols mobile, 3 cols tablet, 4 cols desktop) -->
+      <section>
+        <div id="shop-product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="empty-search-state" class="hidden luxe-card rounded-4xl p-10 text-center space-y-3 my-6">
+          <div class="w-16 h-16 rounded-full bg-pastelPink/50 text-dustyPink flex items-center justify-center mx-auto">
+            <i data-lucide="search-x" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-base font-bold text-darkBrown">ไม่พบสินค้าที่ค้นหา</h3>
+          <p class="text-xs text-warmGray">ลองเปลี่ยนคำค้นหา หรือเลือกดูสินค้าในหมวดหมู่อื่น</p>
+          <button onclick="resetFilters()" class="px-5 py-2.5 rounded-full bg-pink-gradient text-white text-xs font-semibold shadow-pink-glow">
+            แสดงสินค้าทั้งหมด
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 3: WISHLIST / FAVORITES VIEW                                   -->
+    <!-- =================================================================== -->
+    <main id="view-favorites" class="hidden view-animate space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-bold text-darkBrown">รายการโปรดของคุณ (Wishlist)</h1>
+          <p class="text-xs sm:text-sm text-warmGray">ไอเทมที่คุณกดหัวใจบันทึกไว้สำหรับช้อปภายหลัง</p>
+        </div>
+        <button onclick="switchView('shop')" class="px-4 py-2.5 rounded-full bg-white border border-warmMocha/10 text-xs font-semibold text-dustyPink shadow-sm">
+          + เลือกดูสินค้าเพิ่ม
+        </button>
+      </div>
+
+      <div id="favorites-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div id="empty-favorites-state" class="hidden luxe-card rounded-4xl p-12 text-center space-y-3">
+        <div class="w-16 h-16 rounded-full bg-pastelPink/60 text-dustyPink flex items-center justify-center mx-auto">
+          <i data-lucide="heart" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-base font-bold text-darkBrown">ยังไม่มีรายการโปรด</h3>
+        <p class="text-xs text-warmGray max-w-xs mx-auto">กดปุ่มรูปหัวใจบนการ์ดสินค้าเพื่อบันทึกไอเทมที่คุณชื่นชอบไว้ที่นี่</p>
+        <button onclick="switchView('shop')" class="px-6 py-2.5 rounded-full bg-pink-gradient text-white text-xs font-semibold shadow-pink-glow">
+          ไปที่หน้าร้านค้า
+        </button>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MOBILE & TABLET FLOATING BOTTOM GLASS NAVIGATION                      -->
+  <!-- ===================================================================== -->
+  <nav class="md:hidden fixed bottom-4 left-4 right-4 z-40 glass-nav rounded-full px-3 py-2 flex items-center justify-around">
+    <button onclick="switchView('dashboard')" id="nav-mob-dashboard"
+            class="nav-btn-mob flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold bg-pink-gradient text-white shadow-pink-glow transition-all">
+      <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+      <span>หน้าหลัก</span>
+    </button>
+
+    <button onclick="switchView('shop')" id="nav-mob-shop"
+            class="nav-btn-mob flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold text-warmGray transition-all">
+      <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+      <span>ร้านค้า</span>
+    </button>
+
+    <button onclick="switchView('favorites')" id="nav-mob-favorites"
+            class="nav-btn-mob relative flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold text-warmGray transition-all">
+      <i data-lucide="heart" class="w-4 h-4"></i>
+      <span>โปรด</span>
+      <span id="mob-fav-badge" class="hidden w-2 h-2 rounded-full bg-dustyPink"></span>
+    </button>
+
+    <button onclick="openCartDrawer()"
+            class="relative flex items-center justify-center w-10 h-10 rounded-full bg-cream text-darkBrown active:scale-95 transition-all">
+      <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+      <span id="mob-cart-count" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-dustyPink text-white text-[10px] font-bold flex items-center justify-center">
+        2
+      </span>
+    </button>
+  </nav>
+
+  <!-- ===================================================================== -->
+  <!-- PRODUCT DETAIL MODAL SHEET (Mobile-App Pink Gradient Sheet Aesthetic) -->
+  <!-- ===================================================================== -->
+  <div id="product-detail-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-darkBrown/40 backdrop-blur-sm p-0 sm:p-4 transition-opacity">
+    <div class="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-warmWhite rounded-t-[32px] sm:rounded-[32px] shadow-2xl border border-white/60 view-animate" id="detail-modal-card">
+
+      <!-- Top Floating Controls over Large Product Showcase -->
+      <div class="sticky top-0 z-20 flex items-center justify-between px-5 pt-5 pb-2 pointer-events-none">
+        <button onclick="closeProductDetail()" aria-label="Close detail"
+                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-luxe flex items-center justify-center text-darkBrown hover:bg-white active:scale-95 transition-all">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+
+        <button id="detail-fav-btn" onclick="toggleDetailFavorite()" aria-label="Favorite product"
+                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-luxe flex items-center justify-center text-warmGray hover:text-dustyPink active:scale-95 transition-all">
+          <i data-lucide="heart" class="w-5 h-5" id="detail-fav-icon"></i>
+        </button>
+      </div>
+
+      <!-- Large Square-ish Product Hero Visual -->
+      <div class="px-6 pb-6 -mt-8 flex flex-col items-center">
+        <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[28px] overflow-hidden bg-white shadow-luxe-lg border-4 border-white">
+          <img id="detail-img" src="" alt="" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Soft Pink-to-White Gradient Detail Sheet with Rounded Top Corners -->
+      <div class="bg-detail-sheet rounded-t-[32px] border-t border-rosePink/20 px-6 sm:px-8 pt-7 pb-8 space-y-5 shadow-[0_-10px_30px_rgba(229,140,158,0.12)]">
+        <!-- Category & Rating Row -->
+        <div class="flex items-center justify-between">
+          <span id="detail-category" class="px-3 py-1 rounded-full bg-white text-dustyPink text-xs font-bold shadow-sm">
+            Skincare
+          </span>
+          <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 text-xs font-semibold text-darkBrown">
+            <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+            <span id="detail-rating">4.9</span>
+            <span class="text-warmGray font-normal" id="detail-reviews">(128 รีวิว)</span>
+          </div>
+        </div>
+
+        <!-- Title & Price -->
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div>
+            <h2 id="detail-title" class="text-xl sm:text-2xl font-bold text-darkBrown leading-snug">
+              Product Title
+            </h2>
+            <p id="detail-subtitle" class="text-xs text-warmGray mt-0.5">Subtitle</p>
+          </div>
+          <div class="sm:text-right">
+            <p id="detail-price" class="font-display text-2xl sm:text-3xl font-extrabold text-dustyPink">
+              ฿1,890
+            </p>
+            <p class="text-[11px] text-warmGray">รวมภาษีมูลค่าเพิ่มแล้ว</p>
+          </div>
+        </div>
+
+        <!-- Interactive Variant / Size Selector -->
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-darkBrown">เลือกขนาด / เฉดสี (Select Option)</label>
+          <div id="detail-variants" class="flex flex-wrap gap-2">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Rich Description -->
+        <div class="space-y-1.5">
+          <h3 class="text-xs font-bold text-darkBrown">รายละเอียดผลิตภัณฑ์</h3>
+          <p id="detail-desc" class="text-xs sm:text-sm text-warmGray leading-relaxed">
+            Description here...
+          </p>
+        </div>
+
+        <!-- Highlights Badges -->
+        <div class="grid grid-cols-3 gap-2 pt-1">
+          <div class="p-2.5 rounded-2xl bg-cream/70 text-center">
+            <p class="text-[10px] text-warmGray">ส่วนผสม</p>
+            <p class="text-xs font-semibold text-darkBrown mt-0.5">Organic Rose</p>
+          </div>
+          <div class="p-2.5 rounded-2xl bg-cream/70 text-center">
+            <p class="text-[10px] text-warmGray">การจัดส่ง</p>
+            <p class="text-xs font-semibold text-darkBrown mt-0.5">ฟรีทั่วประเทศ</p>
+          </div>
+          <div class="p-2.5 rounded-2xl bg-cream/70 text-center">
+            <p class="text-[10px] text-warmGray">คะแนนรับเพิ่ม</p>
+            <p class="text-xs font-semibold text-dustyPink mt-0.5">+150 PTS</p>
+          </div>
+        </div>
+
+        <!-- Quantity Stepper & Primary Gradient Buy CTA -->
+        <div class="pt-3 flex items-center gap-3">
+          <div class="flex items-center gap-3 px-3.5 py-2.5 rounded-full bg-cream border border-warmMocha/10">
+            <button onclick="changeDetailQty(-1)" class="w-7 h-7 rounded-full bg-white text-darkBrown flex items-center justify-center shadow-sm active:scale-90 transition-all">
+              <i data-lucide="minus" class="w-3.5 h-3.5"></i>
+            </button>
+            <span id="detail-qty" class="font-display font-bold text-sm text-darkBrown w-5 text-center">1</span>
+            <button onclick="changeDetailQty(1)" class="w-7 h-7 rounded-full bg-white text-darkBrown flex items-center justify-center shadow-sm active:scale-90 transition-all">
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <button onclick="addDetailToCart()"
+                  class="flex-1 py-3.5 px-6 rounded-full bg-pink-gradient text-white text-sm font-bold shadow-pink-glow hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>เพิ่มลงตะกร้า • <span id="detail-cta-total">฿1,890</span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SLIDE-OVER SHOPPING CART DRAWER                                       -->
+  <!-- ===================================================================== -->
+  <div id="cart-drawer" class="hidden fixed inset-0 z-50 flex justify-end bg-darkBrown/40 backdrop-blur-sm transition-opacity">
+    <div class="w-full max-w-md bg-warmWhite h-full shadow-2xl flex flex-col justify-between view-animate">
+      <!-- Drawer Header -->
+      <div class="px-6 py-5 bg-white border-b border-cream flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-pink-soft-gradient text-dustyPink flex items-center justify-center">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-bold text-darkBrown">ตะกร้าสินค้าของคุณ</h2>
+            <p class="text-[11px] text-warmGray" id="cart-drawer-subtitle">2 รายการในตะกร้า</p>
+          </div>
+        </div>
+        <button onclick="closeCartDrawer()" class="w-9 h-9 rounded-full bg-cream text-darkBrown flex items-center justify-center hover:bg-pastelPink/50 transition-all">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Cart Items List -->
+      <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-3.5">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Cart Footer: Promo Code & Summary -->
+      <div class="p-5 bg-white border-t border-cream space-y-4 rounded-t-3xl shadow-[0_-8px_24px_rgba(110,86,75,0.06)]">
+        <!-- Promo Code Input -->
+        <div class="flex items-center gap-2">
+          <input type="text" id="promo-code-input" placeholder="ใส่โค้ดส่วนลด (เช่น LUXE10)"
+                 class="flex-1 px-4 py-2.5 rounded-full bg-cream/70 border border-warmMocha/10 text-xs text-darkBrown placeholder-warmGray focus:outline-none focus:border-rosePink uppercase" />
+          <button onclick="applyPromoCode()" class="px-4 py-2.5 rounded-full bg-warmMocha text-white text-xs font-semibold hover:opacity-90 active:scale-95 transition-all">
+            ใช้โค้ด
+          </button>
+        </div>
+
+        <!-- Totals -->
+        <div class="space-y-1.5 text-xs">
+          <div class="flex justify-between text-warmGray">
+            <span>ยอดรวมสินค้า</span>
+            <span id="cart-subtotal" class="font-display font-semibold text-darkBrown">฿0</span>
+          </div>
+          <div id="cart-discount-row" class="hidden flex justify-between text-dustyPink font-medium">
+            <span>ส่วนลดพิเศษ (LUXE10 - 10%)</span>
+            <span id="cart-discount-amount" class="font-display">-฿0</span>
+          </div>
+          <div class="flex justify-between text-warmGray">
+            <span>ค่าจัดส่ง White-Glove</span>
+            <span class="text-emerald-600 font-semibold">ฟรี</span>
+          </div>
+          <div class="flex justify-between items-baseline pt-2 border-t border-cream">
+            <span class="text-sm font-bold text-darkBrown">ยอดชำระสุทธิ</span>
+            <span id="cart-total" class="font-display text-xl font-extrabold text-dustyPink">฿0</span>
+          </div>
+        </div>
+
+        <button onclick="processCheckout()" id="checkout-btn"
+                class="w-full py-3.5 rounded-full bg-pink-gradient text-white text-sm font-bold shadow-pink-glow hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2">
+          <i data-lucide="credit-card" class="w-4 h-4"></i>
+          <span>ชำระเงินผ่าน Luxe Wallet</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE UTILITY MODALS (Top-Up, Track Order, Checkout Success)    -->
+  <!-- ===================================================================== -->
+  <div id="utility-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-darkBrown/40 backdrop-blur-sm p-4">
+    <div id="utility-modal-content" class="w-full max-w-md rounded-4xl bg-white border border-warmMocha/10 p-6 sm:p-7 shadow-2xl view-animate relative">
+      <!-- Dynamic Content Injected Here -->
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- FLOATING TOAST NOTIFICATION                                           -->
+  <!-- ===================================================================== -->
+  <div id="toast-container" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col items-center gap-2 w-full max-w-sm px-4">
+    <!-- Toasts appear here -->
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT APPLICATION LOGIC                                          -->
+  <!-- ===================================================================== -->
+  <script>
+    // 1. CURATED PRODUCT CATALOG
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: "Velvet Rose Glow Serum",
+        subtitle: "เซรั่มกุหลาบดามัสก์เข้มข้นเพื่อผิวฉ่ำโกลว์",
+        category: "Skincare",
+        price: 1890,
+        rating: 4.9,
+        reviews: 214,
+        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85",
+        variants: ["30 ml (Standard)", "50 ml (Luxe Size)"],
+        description: "เซรั่มบำรุงผิวสูตรเข้มข้นผสานสารสกัดจากดอกกุหลาบดามัสก์ออร์แกนิกและไฮยาลูรอนิก 5 โมเลกุล ช่วยเติมความชุ่มชื้นล้ำลึก ฟื้นบำรุงผิวให้ดูเปล่งประกายอมชมพูอย่างเป็นธรรมชาติ"
+      },
+      {
+        id: 2,
+        name: "Blush Peony Eau de Parfum",
+        subtitle: "น้ำหอมกลิ่นดอกพีโอนีและวานิลลาละมุน",
+        category: "Fragrance",
+        price: 3450,
+        rating: 4.9,
+        reviews: 168,
+        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85",
+        variants: ["50 ml", "100 ml"],
+        description: "สัมผัสกลิ่นหอมอันอ่อนหวานและหรูหราจากดอกพีโอนีสีชมพู ผสานความอบอุ่นของ White Musk และ Madagascar Vanilla ติดทนนานตลอดวันในขวดแก้วเจียระไนสีโรสโกลด์"
+      },
+      {
+        id: 3,
+        name: "Cashmere Rose Scented Candle",
+        subtitle: "เทียนหอมไขถั่วเหลืองธรรมชาติ กลิ่นโรสแคชเมียร์",
+        category: "Home Luxe",
+        price: 1290,
+        rating: 4.8,
+        reviews: 95,
+        image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=85",
+        variants: ["220g (45 ชม.)", "400g Double Wick"],
+        description: "สร้างบรรยากาศผ่อนคลายระดับสปาหรูภายในบ้าน ด้วยเทียนหอมไขถั่วเหลืองบริสุทธิ์ 100% กลิ่นกุหลาบผสมไม้จันทน์หอมและอำพันอ่อนๆ"
+      },
+      {
+        id: 4,
+        name: "Silk Satin Mini Vanity Bag",
+        subtitle: "กระเป๋าถือผ้าซาตินสีชมพูพาสเทล อะไหล่แชมเปญโกลด์",
+        category: "Accessories",
+        price: 2790,
+        rating: 4.9,
+        reviews: 82,
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85",
+        variants: ["Pastel Pink", "Warm Mocha", "Champagne"],
+        description: "กระเป๋าขนาดกะทัดรัดตัดเย็บจากผ้าซาตินเนื้อหนานุ่มสัมผัสหรูหรา มาพร้อมสายโซ่สีแชมเปญโกลด์ถอดปรับได้ เหมาะสำหรับทุกโอกาสพิเศษ"
+      },
+      {
+        id: 5,
+        name: "Rose Quartz Facial Roller Set",
+        subtitle: "ชุดลูกกลิ้งหินโรสควอตซ์แท้ 100% นวดกระชับผิว",
+        category: "Skincare",
+        price: 1150,
+        rating: 4.7,
+        reviews: 143,
+        image: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?auto=format&fit=crop&w=700&q=85",
+        variants: ["Roller + Gua Sha Set"],
+        description: "อุปกรณ์นวดหน้าทำจากหินโรสควอตซ์ธรรมชาติ ช่วยกระตุ้นการไหลเวียนโลหิต ลดอาการบวมน้ำ และช่วยให้เซรั่มซึมซาบเข้าสู่ผิวได้ดียิ่งขึ้น"
+      },
+      {
+        id: 6,
+        name: "Sakura & White Tea Diffuser",
+        subtitle: "ก้านไม้หอมปรับอากาศกลิ่นซากุระและชาขาว",
+        category: "Home Luxe",
+        price: 1490,
+        rating: 4.8,
+        reviews: 76,
+        image: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=85",
+        variants: ["150 ml", "300 ml Refill Set"],
+        description: "เติมความหอมสดชื่นและอบอุ่นให้มุมโปรดของคุณ ด้วยน้ำมันหอมระเหยบริสุทธิ์กลิ่นดอกซากุระผสานใบชาขาวในขวดเซรามิกดีไซน์มินิมอล"
+      },
+      {
+        id: 7,
+        name: "Petal Dew Lip Sleeping Mask",
+        subtitle: "มาสก์บำรุงริมฝีปากเนียนนุ่มอมชมพูข้ามคืน",
+        category: "Skincare",
+        price: 790,
+        rating: 4.9,
+        reviews: 310,
+        image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=85",
+        variants: ["Sweet Berry", "Rose Honey"],
+        description: "ลิปมาสก์เนื้อบาล์มเนียนนุ่มละลายบนริมฝีปาก อุดมด้วยวิตามินอีและเชียร์บัตเตอร์ ฟื้นฟูริมฝีปากแห้งกร้านให้อวบอิ่มฉ่ำวาวในข้ามคืน"
+      },
+      {
+        id: 8,
+        name: "Pearl & Rose Gold Hair Claw",
+        subtitle: "กิ๊บหนีบผมประดับไข่มุกน้ำจืดและโรสโกลด์",
+        category: "Accessories",
+        price: 650,
+        rating: 4.8,
+        reviews: 64,
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85",
+        variants: ["Rose Gold", "Champagne Pearl"],
+        description: "เครื่องประดับผมดีไซน์เรียบหรู ประดับไข่มุกคัดพิเศษบนตัวเรือนเคลือบโรสโกลด์เงางาม แข็งแรงและถนอมเส้นผม"
+      }
+    ];
+
+    // 2. APPLICATION STATE
+    let state = {
+      currentView: 'dashboard',
+      selectedCategory: 'All',
+      searchQuery: '',
+      sortBy: 'featured',
+      favorites: [1, 2],
+      cart: [
+        { productId: 1, variant: "30 ml (Standard)", qty: 1 },
+        { productId: 3, variant: "220g (45 ชม.)", qty: 1 }
+      ],
+      promoApplied: false,
+      walletBalance: 24850.00,
+      points: 4280,
+      activeDetailProduct: null,
+      activeDetailVariant: '',
+      activeDetailQty: 1,
+      chartPeriod: 'week',
+      notifications: [
+        { id: 1, title: "พัสดุ #SLP-2026-891 กำลังนำส่ง", desc: "พนักงานจัดส่งจะถึงภายใน 14:30 น. วันนี้", time: "12 นาทีที่แล้ว", unread: true },
+        { id: 2, title: "รับคะแนนพิเศษ +250 PTS", desc: "จากยอดช้อปคอลเลกชัน Velvet Rose", time: "2 ชม. ที่แล้ว", unread: true },
+        { id: 3, title: "โค้ดส่วนลด LUXE10 พร้อมใช้งาน", desc: "ลดทันที 10% เมื่อช้อปครบทุกหมวดหมู่", time: "เมื่อวาน", unread: true }
+      ]
+    };
+
+    // 3. INITIALIZATION
+    window.onload = function () {
+      lucide.createIcons();
+      renderNotifications();
+      renderDashboardFeatured();
+      renderShopGrid();
+      renderFavoritesGrid();
+      updateCartUI();
+      updateFavoriteBadges();
+      renderActivityChart('week');
+
+      // Trigger smooth circular SVG animations
+      setTimeout(() => {
+        animateCircleProgress('ring-vip', 82);
+        animateCircleProgress('ring-glow', 68);
+      }, 250);
+    };
+
+    // 4. VIEW SWITCHING & NAVIGATION
+    function switchView(viewName) {
+      state.currentView = viewName;
+
+      ['dashboard', 'shop', 'favorites'].forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        if (v === viewName) {
+          el.classList.remove('hidden');
+          el.classList.remove('view-animate');
+          void el.offsetWidth; // trigger reflow
+          el.classList.add('view-animate');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      // Update Desktop Nav Pills
+      document.querySelectorAll('.nav-btn-desk').forEach(btn => {
+        btn.className = 'nav-btn-desk px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 text-warmGray hover:text-darkBrown';
+      });
+      const activeDesk = document.getElementById(`nav-desk-${viewName}`);
+      if (activeDesk) {
+        activeDesk.className = 'nav-btn-desk px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 bg-pink-gradient text-white shadow-pink-glow';
+      }
+
+      // Update Mobile Nav Pills
+      document.querySelectorAll('.nav-btn-mob').forEach(btn => {
+        btn.className = 'nav-btn-mob relative flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold text-warmGray transition-all';
+      });
+      const activeMob = document.getElementById(`nav-mob-${viewName}`);
+      if (activeMob) {
+        activeMob.className = 'nav-btn-mob relative flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold bg-pink-gradient text-white shadow-pink-glow transition-all';
+      }
+
+      if (viewName === 'favorites') renderFavoritesGrid();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    // 5. DASHBOARD WIDGETS & INTERACTIVE SVG CHART
+    function animateCircleProgress(elementId, percent) {
+      const circle = document.getElementById(elementId);
+      if (!circle) return;
+      const radius = 40;
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - (percent / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    function renderActivityChart(period) {
+      state.chartPeriod = period;
+      const dataMap = {
+        week: {
+          labels: ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัสฯ', 'ศุกร์', 'เสาร์', 'อาทิตย์'],
+          values: [1450, 2300, 1890, 3450, 2900, 4680, 3920]
+        },
+        month: {
+          labels: ['สัปดาห์ 1', 'สัปดาห์ 2', 'สัปดาห์ 3', 'สัปดาห์ 4'],
+          values: [6800, 9450, 8200, 12890]
+        }
+      };
+
+      const dataset = dataMap[period];
+      const maxVal = Math.max(...dataset.values) * 1.15;
+      const width = 600;
+      const height = 220;
+      const padX = 32;
+      const padTop = 28;
+      const padBottom = 35;
+      const usableW = width - padX * 2;
+      const usableH = height - padTop - padBottom;
+
+      const points = dataset.values.map((val, idx) => {
+        const x = padX + (idx / (dataset.values.length - 1)) * usableW;
+        const y = padTop + usableH - (val / maxVal) * usableH;
+        return { x, y, val, label: dataset.labels[idx] };
+      });
+
+      // Build Smooth Cubic Bezier Curve
+      let lineD = `M ${points[0].x} ${points[0].y}`;
+      for (let i = 0; i < points.length - 1; i++) {
+        const p0 = points[i];
+        const p1 = points[i + 1];
+        const cpx1 = p0.x + (p1.x - p0.x) * 0.45;
+        const cpy1 = p0.y;
+        const cpx2 = p0.x + (p1.x - p0.x) * 0.55;
+        const cpy2 = p1.y;
+        lineD += ` C ${cpx1} ${cpy1}, ${cpx2} ${cpy2}, ${p1.x} ${p1.y}`;
+      }
+
+      const areaD = `${lineD} L ${points[points.length - 1].x} ${height - padBottom} L ${points[0].x} ${height - padBottom} Z`;
+
+      document.getElementById('chart-line-path').setAttribute('d', lineD);
+      document.getElementById('chart-area-path').setAttribute('d', areaD);
+
+      // Render Interactive Points
+      const pointsGroup = document.getElementById('chart-points-group');
+      pointsGroup.innerHTML = points.map((pt, index) => `
+        <g class="cursor-pointer group"
+           onmouseenter="showChartTooltip(${pt.x}, ${pt.y}, '${pt.label}', ${pt.val})"
+           onmouseleave="hideChartTooltip()"
+           onclick="showChartTooltip(${pt.x}, ${pt.y}, '${pt.label}', ${pt.val})">
+          <circle cx="${pt.x}" cy="${pt.y}" r="16" fill="transparent" />
+          <circle cx="${pt.x}" cy="${pt.y}" r="6" fill="#FFFFFF" stroke="#D96B82" stroke-width="3.5"
+                  class="transition-all duration-200 group-hover:r-8" />
+        </g>
+      `).join('');
+
+      // Render X Labels
+      const xLabelsEl = document.getElementById('chart-x-labels');
+      xLabelsEl.innerHTML = dataset.labels.map(lbl => `<span>${lbl}</span>`).join('');
+    }
+
+    function updateChartPeriod(period) {
+      const btnWeek = document.getElementById('btn-chart-week');
+      const btnMonth = document.getElementById('btn-chart-month');
+      if (period === 'week') {
+        btnWeek.className = 'px-3.5 py-1 rounded-full text-xs font-semibold bg-pink-gradient text-white shadow-sm transition-all';
+        btnMonth.className = 'px-3.5 py-1 rounded-full text-xs font-semibold text-warmGray hover:text-darkBrown transition-all';
+      } else {
+        btnMonth.className = 'px-3.5 py-1 rounded-full text-xs font-semibold bg-pink-gradient text-white shadow-sm transition-all';
+        btnWeek.className = 'px-3.5 py-1 rounded-full text-xs font-semibold text-warmGray hover:text-darkBrown transition-all';
+      }
+      renderActivityChart(period);
+    }
+
+    function showChartTooltip(svgX, svgY, label, val) {
+      const tooltip = document.getElementById('chart-tooltip');
+      const container = document.getElementById('chart-container');
+      const rect = container.getBoundingClientRect();
+      const leftPx = (svgX / 600) * rect.width;
+      const topPx = (svgY / 220) * rect.height;
+
+      document.getElementById('tooltip-label').textContent = label;
+      document.getElementById('tooltip-value').textContent = `฿${val.toLocaleString()}`;
+
+      tooltip.style.left = `${Math.min(Math.max(leftPx - 40, 8), rect.width - 105)}px`;
+      tooltip.style.top = `${Math.max(topPx - 56, 0)}px`;
+      tooltip.classList.remove('hidden');
+    }
+
+    function hideChartTooltip() {
+      document.getElementById('chart-tooltip').classList.add('hidden');
+    }
+
+    function toggleSmartAmbience(btn) {
+      const label = document.getElementById('aroma-label');
+      if (label.textContent.includes('เปิดอยู่')) {
+        label.textContent = 'Vanilla Mist • โหมดพักผ่อน';
+        showToast('เปลี่ยนกลิ่นหอมเป็น Vanilla Mist 🕯️');
+      } else {
+        label.textContent = 'Rose Silk • เปิดอยู่';
+        showToast('เปิดกลิ่นหอม Rose Silk Ambience 🌸');
+      }
+    }
+
+    // 6. PRODUCT CARD COMPONENT & STOREFRONT FILTERING
+    function createProductCardHTML(product) {
+      const isFav = state.favorites.includes(product.id);
+      return `
+        <article class="luxe-card luxe-card-hover rounded-4xl p-3 sm:p-4 flex flex-col justify-between group relative">
+          <!-- Square Product Image Container -->
+          <div class="relative aspect-square w-full rounded-3xl overflow-hidden bg-cream cursor-pointer"
+               onclick="openProductDetail(${product.id})">
+            <img src="${product.image}"
+                 onerror="this.src='https://placehold.co/500x500/FADBE2/C96A7E?text=${encodeURIComponent(product.name)}'"
+                 alt="${product.name}"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
+            <!-- Category Badge -->
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-md text-[10px] font-bold text-warmMocha shadow-sm">
+              ${product.category}
+            </span>
+
+            <!-- Floating Favorite Button -->
+            <button onclick="event.stopPropagation(); toggleFavorite(${product.id}, this)"
+                    aria-label="Toggle Favorite"
+                    class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-center transition-all hover:scale-105 active:scale-90 ${isFav ? 'text-dustyPink' : 'text-warmGray hover:text-dustyPink'}">
+              <svg class="w-4 h-4 ${isFav ? 'fill-dustyPink' : 'fill-none'}" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Product Info -->
+          <div class="pt-3.5 px-1 flex-1 flex flex-col justify-between space-y-3">
+            <div class="cursor-pointer" onclick="openProductDetail(${product.id})">
+              <div class="flex items-center gap-1 text-[11px] font-semibold text-amber-500 mb-1">
+                <span>★</span>
+                <span class="text-darkBrown">${product.rating}</span>
+                <span class="text-warmGray font-normal">(${product.reviews})</span>
+              </div>
+              <h3 class="text-sm sm:text-base font-bold text-darkBrown line-clamp-1 group-hover:text-dustyPink transition-colors">
+                ${product.name}
+              </h3>
+              <p class="text-[11px] text-warmGray line-clamp-1 mt-0.5">${product.subtitle}</p>
+            </div>
+
+            <!-- Price & Quick Add Button -->
+            <div class="flex items-center justify-between pt-1">
+              <div>
+                <span class="font-display text-base sm:text-lg font-extrabold text-darkBrown">
+                  ฿${product.price.toLocaleString()}
+                </span>
+              </div>
+
+              <button onclick="quickAddToCart(${product.id})"
+                      aria-label="Add to Cart"
+                      class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-pink-gradient text-white shadow-pink-glow flex items-center justify-center hover:opacity-95 active:scale-90 transition-all">
+                <i data-lucide="plus" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderDashboardFeatured() {
+      const container = document.getElementById('dashboard-featured-grid');
+      container.innerHTML = PRODUCTS.slice(0, 4).map(createProductCardHTML).join('');
+      lucide.createIcons();
+    }
+
+    function selectCategory(category) {
+      state.selectedCategory = category;
+      document.querySelectorAll('.cat-pill').forEach(pill => {
+        if (pill.dataset.cat === category) {
+          pill.className = 'cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-pink-gradient text-white shadow-pink-glow';
+        } else {
+          pill.className = 'cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-white text-warmGray border border-warmMocha/10 hover:text-darkBrown';
+        }
+      });
+      renderShopGrid();
+    }
+
+    function filterProducts() {
+      const input = document.getElementById('product-search-input');
+      const clearBtn = document.getElementById('clear-search-btn');
+      state.searchQuery = input.value.trim().toLowerCase();
+      state.sortBy = document.getElementById('product-sort-select').value;
+
+      if (state.searchQuery.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      renderShopGrid();
+    }
+
+    function clearSearch() {
+      document.getElementById('product-search-input').value = '';
+      filterProducts();
+    }
+
+    function resetFilters() {
+      document.getElementById('product-search-input').value = '';
+      state.searchQuery = '';
+      selectCategory('All');
+    }
+
+    function renderShopGrid() {
+      let filtered = PRODUCTS.filter(p => {
+        const matchCat = state.selectedCategory === 'All' || p.category === state.selectedCategory;
+        const matchQuery = !state.searchQuery ||
+          p.name.toLowerCase().includes(state.searchQuery) ||
+          p.subtitle.toLowerCase().includes(state.searchQuery) ||
+          p.category.toLowerCase().includes(state.searchQuery);
+        return matchCat && matchQuery;
+      });
+
+      if (state.sortBy === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (state.sortBy === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (state.sortBy === 'rating') {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      const grid = document.getElementById('shop-product-grid');
+      const emptyState = document.getElementById('empty-search-state');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+        grid.innerHTML = filtered.map(createProductCardHTML).join('');
+      }
+      lucide.createIcons();
+    }
+
+    // 7. FAVORITES / WISHLIST LOGIC
+    function toggleFavorite(productId, btnEl) {
+      const idx = state.favorites.indexOf(productId);
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (idx > -1) {
+        state.favorites.splice(idx, 1);
+        showToast(`นำ "${product.name}" ออกจากรายการโปรด`);
+      } else {
+        state.favorites.push(productId);
+        showToast(`บันทึก "${product.name}" ลงรายการโปรดแล้ว 💖`);
+      }
+
+      if (btnEl) {
+        btnEl.classList.add('heart-pop');
+      }
+
+      updateFavoriteBadges();
+      renderDashboardFeatured();
+      renderShopGrid();
+      if (state.currentView === 'favorites') renderFavoritesGrid();
+    }
+
+    function updateFavoriteBadges() {
+      const count = state.favorites.length;
+      const deskBadge = document.getElementById('desk-fav-badge');
+      const mobBadge = document.getElementById('mob-fav-badge');
+
+      if (count > 0) {
+        deskBadge.textContent = count;
+        deskBadge.classList.remove('hidden');
+        mobBadge.classList.remove('hidden');
+      } else {
+        deskBadge.classList.add('hidden');
+        mobBadge.classList.add('hidden');
+      }
+    }
+
+    function renderFavoritesGrid() {
+      const favProducts = PRODUCTS.filter(p => state.favorites.includes(p.id));
+      const grid = document.getElementById('favorites-grid');
+      const empty = document.getElementById('empty-favorites-state');
+
+      if (favProducts.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+      } else {
+        empty.classList.add('hidden');
+        grid.innerHTML = favProducts.map(createProductCardHTML).join('');
+      }
+      lucide.createIcons();
+    }
+
+    // 8. PRODUCT DETAIL BOTTOM SHEET / MODAL
+    function openProductDetail(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      state.activeDetailProduct = product;
+      state.activeDetailVariant = product.variants[0];
+      state.activeDetailQty = 1;
+
+      document.getElementById('detail-img').src = product.image;
+      document.getElementById('detail-category').textContent = product.category;
+      document.getElementById('detail-rating').textContent = product.rating;
+      document.getElementById('detail-reviews').textContent = `(${product.reviews} รีวิว)`;
+      document.getElementById('detail-title').textContent = product.name;
+      document.getElementById('detail-subtitle').textContent = product.subtitle;
+      document.getElementById('detail-price').textContent = `฿${product.price.toLocaleString()}`;
+      document.getElementById('detail-desc').textContent = product.description;
+      document.getElementById('detail-qty').textContent = '1';
+      document.getElementById('detail-cta-total').textContent = `฿${product.price.toLocaleString()}`;
+
+      renderDetailVariants();
+      updateDetailFavButton();
+
+      const modal = document.getElementById('product-detail-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeProductDetail() {
+      document.getElementById('product-detail-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function renderDetailVariants() {
+      const product = state.activeDetailProduct;
+      const container = document.getElementById('detail-variants');
+      container.innerHTML = product.variants.map(v => {
+        const active = v === state.activeDetailVariant;
+        return `
+          <button onclick="selectDetailVariant('${v}')"
+                  class="px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                    active
+                      ? 'bg-pink-gradient text-white shadow-pink-glow'
+                      : 'bg-white border border-warmMocha/15 text-darkBrown hover:border-rosePink'
+                  }">
+            ${v}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectDetailVariant(variant) {
+      state.activeDetailVariant = variant;
+      renderDetailVariants();
+    }
+
+    function changeDetailQty(delta) {
+      const next = state.activeDetailQty + delta;
+      if (next < 1 || next > 20) return;
+      state.activeDetailQty = next;
+      document.getElementById('detail-qty').textContent = next;
+      const total = state.activeDetailProduct.price * next;
+      document.getElementById('detail-cta-total').textContent = `฿${total.toLocaleString()}`;
+    }
+
+    function toggleDetailFavorite() {
+      if (!state.activeDetailProduct) return;
+      toggleFavorite(state.activeDetailProduct.id);
+      updateDetailFavButton();
+    }
+
+    function updateDetailFavButton() {
+      if (!state.activeDetailProduct) return;
+      const isFav = state.favorites.includes(state.activeDetailProduct.id);
+      const btn = document.getElementById('detail-fav-btn');
+      btn.innerHTML = `
+        <svg class="w-5 h-5 ${isFav ? 'fill-dustyPink text-dustyPink' : 'fill-none text-warmGray'}" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      `;
+    }
+
+    function addDetailToCart() {
+      if (!state.activeDetailProduct) return;
+      addToCart(state.activeDetailProduct.id, state.activeDetailVariant, state.activeDetailQty);
+      closeProductDetail();
+    }
+
+    // 9. SHOPPING CART DRAWER & CHECKOUT LOGIC
+    function quickAddToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+      addToCart(productId, product.variants[0], 1);
+    }
+
+    function addToCart(productId, variant, qty) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      const existing = state.cart.find(item => item.productId === productId && item.variant === variant);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        state.cart.push({ productId, variant, qty });
+      }
+      updateCartUI();
+      showToast(`เพิ่ม "${product.name}" ลงตะกร้าแล้ว 🛍️`);
+    }
+
+    function updateCartItemQty(index, delta) {
+      state.cart[index].qty += delta;
+      if (state.cart[index].qty <= 0) {
+        state.cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(index) {
+      state.cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function applyPromoCode() {
+      const code = document.getElementById('promo-code-input').value.trim().toUpperCase();
+      if (code === 'LUXE10') {
+        state.promoApplied = true;
+        updateCartUI();
+        showToast('ใช้โค้ดส่วนลด LUXE10 ลด 10% สำเร็จ! ✨');
+      } else {
+        showToast('กรุณากรอกโค้ด "LUXE10" เพื่อรับส่วนลด 10%');
+      }
+    }
+
+    function updateCartUI() {
+      const totalItems = state.cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('header-cart-count').textContent = totalItems;
+      document.getElementById('mob-cart-count').textContent = totalItems;
+      document.getElementById('cart-drawer-subtitle').textContent = `${totalItems} รายการในตะกร้า`;
+
+      const container = document.getElementById('cart-items-container');
+      if (state.cart.length === 0) {
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center py-12 space-y-3">
+            <div class="w-16 h-16 rounded-full bg-cream text-warmMocha flex items-center justify-center">
+              <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+            </div>
+            <p class="text-sm font-bold text-darkBrown">ตะกร้าของคุณยังว่างอยู่</p>
+            <p class="text-xs text-warmGray">เลือกช้อปไอเทมความงามและไลฟ์สไตล์ได้ทันที</p>
+            <button onclick="closeCartDrawer(); switchView('shop')" class="px-5 py-2.5 rounded-full bg-pink-gradient text-white text-xs font-semibold shadow-pink-glow">
+              ไปที่หน้าร้านค้า
+            </button>
+          </div>
+        `;
+      } else {
+        container.innerHTML = state.cart.map((item, idx) => {
+          const p = PRODUCTS.find(prod => prod.id === item.productId);
+          return `
+            <div class="p-3.5 rounded-3xl bg-white border border-warmMocha/10 shadow-sm flex items-center gap-3.5">
+              <img src="${p.image}" alt="${p.name}" class="w-16 h-16 rounded-2xl object-cover bg-cream" />
+              <div class="flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-xs font-bold text-darkBrown truncate">${p.name}</h4>
+                  <button onclick="removeCartItem(${idx})" class="text-warmGray hover:text-dustyPink">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+                <p class="text-[11px] text-warmGray mt-0.5">${item.variant}</p>
+                <div class="flex items-center justify-between mt-2">
+                  <span class="font-display text-sm font-extrabold text-dustyPink">฿${(p.price * item.qty).toLocaleString()}</span>
+                  <div class="flex items-center gap-2 bg-cream px-2 py-1 rounded-full">
+                    <button onclick="updateCartItemQty(${idx}, -1)" class="w-5 h-5 rounded-full bg-white text-darkBrown flex items-center justify-center text-xs font-bold">-</button>
+                    <span class="text-xs font-bold text-darkBrown w-4 text-center">${item.qty}</span>
+                    <button onclick="updateCartItemQty(${idx}, 1)" class="w-5 h-5 rounded-full bg-white text-darkBrown flex items-center justify-center text-xs font-bold">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const subtotal = state.cart.reduce((sum, item) => {
+        const p = PRODUCTS.find(prod => prod.id === item.productId);
+        return sum + p.price * item.qty;
+      }, 0);
+
+      const discount = state.promoApplied ? Math.round(subtotal * 0.1) : 0;
+      const finalTotal = subtotal - discount;
+
+      document.getElementById('cart-subtotal').textContent = `฿${subtotal.toLocaleString()}`;
+      const discountRow = document.getElementById('cart-discount-row');
+      if (state.promoApplied && subtotal > 0) {
+        discountRow.classList.remove('hidden');
+        document.getElementById('cart-discount-amount').textContent = `-฿${discount.toLocaleString()}`;
+      } else {
+        discountRow.classList.add('hidden');
+      }
+      document.getElementById('cart-total').textContent = `฿${finalTotal.toLocaleString()}`;
+      lucide.createIcons();
+    }
+
+    function openCartDrawer() {
+      updateCartUI();
+      document.getElementById('cart-drawer').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCartDrawer() {
+      document.getElementById('cart-drawer').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function processCheckout() {
+      if (state.cart.length === 0) {
+        showToast('กรุณาเพิ่มสินค้าลงตะกร้าก่อนชำระเงิน');
+        return;
+      }
+
+      const subtotal = state.cart.reduce((sum, item) => {
+        const p = PRODUCTS.find(prod => prod.id === item.productId);
+        return sum + p.price * item.qty;
+      }, 0);
+      const discount = state.promoApplied ? Math.round(subtotal * 0.1) : 0;
+      const finalTotal = subtotal - discount;
+
+      if (state.walletBalance >= finalTotal) {
+        state.walletBalance -= finalTotal;
+        const earnedPts = Math.round(finalTotal * 0.1);
+        state.points += earnedPts;
+        document.getElementById('wallet-balance-display').textContent = `฿${state.walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+        document.getElementById('points-display').textContent = state.points.toLocaleString();
+
+        state.cart = [];
+        state.promoApplied = false;
+        updateCartUI();
+        closeCartDrawer();
+
+        openUtilityModal(`
+          <div class="text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-pink-gradient text-white flex items-center justify-center mx-auto shadow-pink-glow">
+              <i data-lucide="check" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-darkBrown">ชำระเงินสำเร็จเรียบร้อย ✨</h3>
+            <p class="text-xs text-warmGray leading-relaxed">
+              ขอบคุณที่ช้อปกับ <strong>SOFT LUXE PINK</strong><br/>
+              หักยอดจาก Luxe Wallet จำนวน <strong>฿${finalTotal.toLocaleString()}</strong><br/>
+              คุณได้รับคะแนนสะสมเพิ่ม <span class="text-dustyPink font-bold">+${earnedPts} PTS</span>
+            </p>
+            <div class="p-3.5 rounded-2xl bg-cream/70 text-xs text-warmMocha">
+              หมายเลขคำสั่งซื้อ: <strong>#SLP-2026-904</strong> • จัดส่งแบบ White-Glove
+            </div>
+            <button onclick="closeUtilityModal()" class="w-full py-3 rounded-full bg-pink-gradient text-white text-sm font-bold shadow-pink-glow">
+              กลับสู่หน้าหลัก
+            </button>
+          </div>
+        `);
+      } else {
+        showToast('ยอดเงินใน Luxe Wallet ไม่เพียงพอ กรุณาเติมเงิน');
+      }
+    }
+
+    // 10. NOTIFICATIONS & UTILITY MODALS
+    function toggleNotifications() {
+      const dropdown = document.getElementById('notif-dropdown');
+      dropdown.classList.toggle('hidden');
+    }
+
+    function renderNotifications() {
+      const list = document.getElementById('notif-list');
+      list.innerHTML = state.notifications.map(n => `
+        <div class="p-3 rounded-2xl ${n.unread ? 'bg-pink-soft-gradient/60' : 'bg-cream/40'} border border-warmMocha/5">
+          <div class="flex items-start justify-between gap-2">
+            <p class="text-xs font-bold text-darkBrown">${n.title}</p>
+            <span class="text-[10px] text-warmGray whitespace-nowrap">${n.time}</span>
+          </div>
+          <p class="text-[11px] text-warmGray mt-0.5">${n.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    function markAllRead() {
+      state.notifications.forEach(n => n.unread = false);
+      document.getElementById('notif-dot').classList.add('hidden');
+      renderNotifications();
+      showToast('อ่านการแจ้งเตือนทั้งหมดแล้ว');
+    }
+
+    function openUtilityModal(html) {
+      const modal = document.getElementById('utility-modal');
+      document.getElementById('utility-modal-content').innerHTML = html;
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeUtilityModal() {
+      document.getElementById('utility-modal').classList.add('hidden');
+    }
+
+    function openTopUpModal() {
+      openUtilityModal(`
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-darkBrown">เติมเงิน Luxe Wallet</h3>
+            <button onclick="closeUtilityModal()" class="w-8 h-8 rounded-full bg-cream flex items-center justify-center text-darkBrown">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <p class="text-xs text-warmGray">เลือกจำนวนเงินที่ต้องการเติมเข้ากระเป๋าสมาชิก (รับเงินคืน 4.5%)</p>
+          <div class="grid grid-cols-3 gap-2.5">
+            <button onclick="confirmTopUp(2000)" class="py-3 rounded-2xl bg-cream hover:bg-pastelPink/60 font-display font-bold text-sm text-darkBrown transition-all">฿2,000</button>
+            <button onclick="confirmTopUp(5000)" class="py-3 rounded-2xl bg-pink-soft-gradient border border-rosePink/30 font-display font-bold text-sm text-dustyPink transition-all">฿5,000</button>
+            <button onclick="confirmTopUp(10000)" class="py-3 rounded-2xl bg-cream hover:bg-pastelPink/60 font-display font-bold text-sm text-darkBrown transition-all">฿10,000</button>
+          </div>
+        </div>
+      `);
+    }
+
+    function confirmTopUp(amount) {
+      state.walletBalance += amount;
+      document.getElementById('wallet-balance-display').textContent = `฿${state.walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+      closeUtilityModal();
+      showToast(`เติมเงิน ฿${amount.toLocaleString()} เข้า Luxe Wallet สำเร็จ ✨`);
+    }
+
+    function openRedeemModal() {
+      openUtilityModal(`
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-darkBrown">แลกคะแนน Luxe Points</h3>
+            <button onclick="closeUtilityModal()" class="w-8 h-8 rounded-full bg-cream flex items-center justify-center text-darkBrown">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <p class="text-xs text-warmGray">คะแนนปัจจุบันของคุณ: <strong class="text-dustyPink">${state.points.toLocaleString()} PTS</strong></p>
+          <div class="p-4 rounded-3xl bg-pink-soft-gradient border border-rosePink/20 flex items-center justify-between">
+            <div>
+              <p class="text-xs font-bold text-darkBrown">Rose Silk Travel Set</p>
+              <p class="text-[11px] text-warmGray">ใช้ 1,500 PTS</p>
+            </div>
+            <button onclick="redeemPoints(1500)" class="px-4 py-2 rounded-full bg-pink-gradient text-white text-xs font-semibold shadow-pink-glow">
+              แลกเลย
+            </button>
+          </div>
+        </div>
+      `);
+    }
+
+    function redeemPoints(cost) {
+      if (state.points >= cost) {
+        state.points -= cost;
+        document.getElementById('points-display').textContent = state.points.toLocaleString();
+        closeUtilityModal();
+        showToast('แลกรับชุดของขวัญ Rose Silk สำเร็จ 🎁');
+      } else {
+        showToast('คะแนนสะสมไม่เพียงพอ');
+      }
+    }
+
+    function openTrackModal() {
+      openUtilityModal(`
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-darkBrown">ติดตามสถานะพัสดุ</h3>
+            <button onclick="closeUtilityModal()" class="w-8 h-8 rounded-full bg-cream flex items-center justify-center text-darkBrown">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-cream/70 text-xs">
+            <p class="font-bold text-darkBrown">คำสั่งซื้อ #SLP-2026-891</p>
+            <p class="text-warmGray mt-0.5">Velvet Rose Glow Serum (30 ml)</p>
+          </div>
+          <div class="space-y-3 pl-3 border-l-2 border-rosePink ml-2 text-xs">
+            <div>
+              <p class="font-bold text-dustyPink">กำลังนำส่งถึงคุณ (14:05 น.)</p>
+              <p class="text-warmGray">พนักงานจัดส่ง White-Glove กำลังเดินทาง</p>
+            </div>
+            <div>
+              <p class="font-semibold text-darkBrown">ผ่านศูนย์คัดแยกบูติกกรุงเทพฯ</p>
+              <p class="text-warmGray">บรรจุในกล่องของขวัญควบคุมอุณหภูมิ</p>
+            </div>
+          </div>
+        </div>
+      `);
+    }
+
+    function openProfileModal() {
+      openUtilityModal(`
+        <div class="text-center space-y-4">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+               class="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-pastelPink" alt="Chertam S." />
+          <div>
+            <h3 class="text-lg font-bold text-darkBrown">Chertam S.</h3>
+            <span class="px-3 py-1 rounded-full bg-pastelPink text-dustyPink text-xs font-bold">VIP Rose Tier Member</span>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-2xl bg-cream/70">
+              <p class="text-warmGray">ยอดเงินคงเหลือ</p>
+              <p class="font-display font-bold text-darkBrown mt-0.5">฿${state.walletBalance.toLocaleString()}</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-cream/70">
+              <p class="text-warmGray">คะแนนสะสม</p>
+              <p class="font-display font-bold text-dustyPink mt-0.5">${state.points.toLocaleString()} PTS</p>
+            </div>
+          </div>
+          <button onclick="closeUtilityModal()" class="w-full py-2.5 rounded-full bg-warmMocha text-white text-xs font-semibold">
+            ปิดหน้าต่าง
+          </button>
+        </div>
+      `);
+    }
+
+    // 11. SLEEK TOAST SYSTEM
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'px-4 py-3 rounded-full bg-darkBrown/95 text-white text-xs font-medium shadow-luxe-lg backdrop-blur-md flex items-center gap-2 view-animate';
+      toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-rosePink"></span><span>${message}</span>`;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-8px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 2600);
+    }
+
+    // Close notification dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+      const dropdown = document.getElementById('notif-dropdown');
+      if (!dropdown.classList.contains('hidden') && !e.target.closest('#notif-dropdown') && !e.target.closest('button[aria-label="Notifications"]')) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
